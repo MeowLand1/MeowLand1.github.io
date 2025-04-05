@@ -23,20 +23,20 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('photo_2025-04-05_16-46-28.jpg'); /* لینک تصویر خود را در اینجا وارد کنید */
+      background-image: url('photo_2025-04-05_16-46-28.jpg');
       background-size: cover;
       background-position: center;
       z-index: -2;
     }
 
-    /* Overlay layer with black and purple */
+    /* Overlay layer */
     .overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6); /* نیمه‌شفاف سیاه */
+      background: rgba(0, 0, 0, 0.6);
       z-index: -1;
     }
 
@@ -51,7 +51,7 @@
       top: 0;
       z-index: 1000;
       box-shadow: 0 0 10px #6a0dad55;
-      direction: rtl; /* Make navbar right-aligned */
+      direction: rtl;
     }
 
     .navbar-menu {
@@ -79,7 +79,7 @@
       padding: 60px 20px;
       text-align: center;
       position: relative;
-      z-index: 2; /* Content above overlay */
+      z-index: 2;
     }
 
     .title {
@@ -150,7 +150,6 @@
       background: #555;
     }
 
-    /* Style for the server IP address with background */
     .ip {
       position: relative;
       display: inline-block;
@@ -165,35 +164,43 @@
       background: #8e44ad;
     }
 
-    /* Tooltip for IP copy action */
-    .ip-tooltip {
-      position: absolute;
-      top: -25px;
+    /* Tooltip message style */
+    .copy-message {
+      position: fixed;
+      top: 20px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: #28a745;
       color: white;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 0.9em;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1.1em;
       opacity: 0;
-      transition: opacity 0.3s;
+      transition: opacity 0.5s;
+      z-index: 1001;
     }
 
-    .ip:hover .ip-tooltip {
+    .show-message {
       opacity: 1;
+    }
+
+    /* Version style with background */
+    .version {
+      background: #6a0dad;
+      padding: 8px 15px;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Background image -->
   <div class="background-image"></div>
-
-  <!-- Overlay layer -->
   <div class="overlay"></div>
 
-  <!-- Navbar -->
   <nav class="navbar">
     <ul class="navbar-menu">
       <li><a href="index.html">صفحه اصلی</a></li>
@@ -203,7 +210,6 @@
     </ul>
   </nav>
 
-  <!-- Main content -->
   <div class="content">
     <h2 class="title">سرور ماینکرفت MeowLand</h2>
     <p class="desc">**************</p>
@@ -219,10 +225,7 @@
     <div class="info">
       <p class="version">ورژن : 1.8 تا 1.21</p>
       <span class="divider"></span>
-      <p class="ip" onclick="copyToClipboard()">
-        IP: play.meowland.ir
-        <span class="ip-tooltip">کلیک کنید برای کپی کردن</span>
-      </p>
+      <p class="ip" onclick="copyToClipboard()">play.meowland.ir</p>
     </div>
     <div class="actions">
       <button class="btn primary">همین الان شروع کنید</button>
@@ -230,15 +233,22 @@
     </div>
   </div>
 
+  <div class="copy-message" id="copyMessage">آدرس سرور کپی شد!</div>
+
   <script>
     function copyToClipboard() {
-      const text = document.querySelector('.ip').textContent.replace("IP: ", "").trim();
+      const text = document.querySelector('.ip').textContent.trim();
       navigator.clipboard.writeText(text).then(function() {
-        alert("آدرس سرور کپی شد!");
+        const message = document.getElementById('copyMessage');
+        message.classList.add('show-message');
+        setTimeout(() => {
+          message.classList.remove('show-message');
+        }, 2000); // Hide message after 2 seconds
       }).catch(function(err) {
         console.error('کپی کردن آدرس سرور با خطا مواجه شد: ', err);
       });
     }
   </script>
+
 </body>
 </html>
