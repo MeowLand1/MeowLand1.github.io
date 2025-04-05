@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فروش رنک ماینکرفت</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: #0d0d0d;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    nav.navbar {
+      background: #1a1a1a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 0 10px #6a0dad55;
+    }
+    .navbar-menu {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar-menu li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .navbar-menu li a:hover {
+      background: #6a0dad;
+    }
+    .logo svg {
+      height: 40px;
+      width: auto;
+      vertical-align: middle;
+    }
+    header {
+      background: linear-gradient(90deg, #6a0dad, #9b59b6);
+      padding: 30px 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    .rank-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .rank-box {
+      background: #1f1f1f;
+      padding: 20px;
+      border-radius: 20px;
+      width: 200px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 0 15px #6a0dad66;
+      transition: transform 0.3s;
+    }
+    .rank-box:hover {
+      transform: scale(1.05);
+    }
+    .rank-box::before,
+    .rank-box::after {
+      content: "";
+      position: absolute;
+      top: -15px;
+      width: 30px;
+      height: 30px;
+      background: #6a0dad;
+      border-radius: 50% 50% 0 0;
+    }
+    .rank-box::before {
+      left: 20px;
+    }
+    .rank-box::after {
+      right: 20px;
+    }
+    .rank-name {
+      font-size: 1.5em;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .rank-price {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #ffb6f0;
+    }
+    .more-button {
+      background: #6a0dad;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 12px;
+      margin: 40px auto;
+      display: block;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .more-button:hover {
+      background: #8e44ad;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="logo" href="#">
+      <svg class="glogo" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="primary" ="M11.1135 0L0.0905762 11.0247V21.8113L21.8873 0H11.1135Z" fill="currentColor"></path>
+        <path class="primary" ="M10.8698 28.7589L0 39.6364H10.768L21.6364 28.7589H10.8698Z" fill="currentColor"></path>
+        <path class="primary" ="M36.6673 16.5793H25.9782L18.3844 24.1782H29.6844L14.2426 39.6364H25.0164L40 24.6426L36.6673 16.5793Z" fill="currentColor"></path>
+        <path class="primary" ="M10.904 14.4673L0.0963135 25.2822V36.0749L10.904 25.2596V14.4673Z" fill="currentColor"></path>
+      </svg>
+    </a>
+    <ul class="navbar-menu">
+      <li><a href="index.html">صفحه اصلی</a></li>
+      <li><a href="ranks.html">رنک‌ها</a></li>
+      <li><a href="#about">درباره ما</a></li>
+      <li><a href="#contact">تماس با ما</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>فروش رنک‌های ماینکرفت</h1>
+  </header>
+
+  <section class="rank-container">
+    <div class="rank-box">
+      <div class="rank-name">VIP</div>
+      <div class="rank-price">49,000 تومان</div>
+    </div>
+    <div class="rank-box">
+      <div class="rank-name">VIP+</div>
+      <div class="rank-price">79,000 تومان</div>
+    </div>
+    <div class="rank-box">
+      <div class="rank-name">MVP</div>
+      <div class="rank-price">99,000 تومان</div>
+    </div>
+    <div class="rank-box">
+      <div class="rank-name">MVP+</div>
+      <div class="rank-price">129,000 تومان</div>
+    </div>
+    <div class="rank-box">
+      <div class="rank-name">LEGEND</div>
+      <div class="rank-price">159,000 تومان</div>
+    </div>
+    <div class="rank-box">
+      <div class="rank-name">ULTIMATE</div>
+      <div class="rank-price">199,000 تومان</div>
+    </div>
+  </section>
+
+  <a href="ranks.html"><button class="more-button">اطلاعات بیشتر درباره رنک‌ها</button></a>
+</body>
+</html>
