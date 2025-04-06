@@ -41,10 +41,16 @@
     .navbar-menu li a:hover {
       background: #6a0dad;
     }
-    .logo svg {
-      height: 40px;
-      width: auto;
-      vertical-align: middle;
+    .navbar-login {
+      background: #6a0dad;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .navbar-login:hover {
+      background: #8e44ad;
     }
     header {
       background: linear-gradient(90deg, #6a0dad, #9b59b6);
@@ -75,22 +81,6 @@
     .rank-box:hover {
       transform: scale(1.05);
     }
-    .rank-box::before,
-    .rank-box::after {
-      content: "";
-      position: absolute;
-      top: -15px;
-      width: 30px;
-      height: 30px;
-      background: #6a0dad;
-      border-radius: 50% 50% 0 0;
-    }
-    .rank-box::before {
-      left: 20px;
-    }
-    .rank-box::after {
-      right: 20px;
-    }
     .rank-name {
       font-size: 1.5em;
       margin-top: 20px;
@@ -119,15 +109,9 @@
   </style>
 </head>
 <body>
+
   <nav class="navbar">
-    <a class="logo" href="#">
-      <svg class="glogo" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path class="primary" ="M11.1135 0L0.0905762 11.0247V21.8113L21.8873 0H11.1135Z" fill="currentColor"></path>
-        <path class="primary" ="M10.8698 28.7589L0 39.6364H10.768L21.6364 28.7589H10.8698Z" fill="currentColor"></path>
-        <path class="primary" ="M36.6673 16.5793H25.9782L18.3844 24.1782H29.6844L14.2426 39.6364H25.0164L40 24.6426L36.6673 16.5793Z" fill="currentColor"></path>
-        <path class="primary" ="M10.904 14.4673L0.0963135 25.2822V36.0749L10.904 25.2596V14.4673Z" fill="currentColor"></path>
-      </svg>
-    </a>
+    <button class="navbar-login" onclick="window.location.href='login.html'">ورود</button> <!-- دکمه ورود سمت چپ -->
     <ul class="navbar-menu">
       <li><a href="index.html">صفحه اصلی</a></li>
       <li><a href="ranks.html">رنک‌ها</a></li>
@@ -142,31 +126,32 @@
 
   <section class="rank-container">
     <div class="rank-box">
-      <div class="rank-name">Cat</div>
+      <div class="rank-name">VIP</div>
+      <div class="rank-price">49,000 تومان</div>
+    </div>
+    <div class="rank-box">
+      <div class="rank-name">VIP+</div>
       <div class="rank-price">79,000 تومان</div>
     </div>
     <div class="rank-box">
-      <div class="rank-name">Prime</div>
-      <div class="rank-price">180,000 تومان</div>
+      <div class="rank-name">MVP</div>
+      <div class="rank-price">99,000 تومان</div>
     </div>
     <div class="rank-box">
-      <div class="rank-name">Ender titan</div>
-      <div class="rank-price">260,000 تومان</div>
+      <div class="rank-name">MVP+</div>
+      <div class="rank-price">129,000 تومان</div>
     </div>
     <div class="rank-box">
-      <div class="rank-name">Moew</div>
-      <div class="rank-price">450,000 تومان</div>
+      <div class="rank-name">LEGEND</div>
+      <div class="rank-price">159,000 تومان</div>
     </div>
     <div class="rank-box">
-      <div class="rank-name">Sponsor</div>
-      <div class="rank-price">720,000 تومان</div>
-    </div>
-    <div class="rank-box">
-      <div class="rank-name">Sponsor+</div>
-      <div class="rank-price">2,000,000 تومان</div>
+      <div class="rank-name">ULTIMATE</div>
+      <div class="rank-price">199,000 تومان</div>
     </div>
   </section>
 
-  <a href="ranks.html"><button class="more-button">اطلاعات بیشتر درباره رنک‌ها</button></a>
+  <a href="/ranks"><button class="more-button">اطلاعات بیشتر درباره رنک‌ها</button></a>
+
 </body>
 </html>
